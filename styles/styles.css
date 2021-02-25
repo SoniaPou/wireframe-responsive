@@ -1,0 +1,246 @@
+body { margin: 0;
+    display: flex;   /* this clears the vertical collapsing margin for adjacent elements, wich, in this case, are: header / section "main-content" / footer "page-footer" */
+    flex-direction: column;  
+}
+
+
+header {
+    background-color: black;
+    margin: 1rem; 
+    padding: 1rem; 
+}
+
+    nav {
+        background-color: #27394E;
+        padding: 1rem;  
+        margin: 1rem;
+    }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
+            align-content: space-between;
+            margin: 0;
+            padding: 0;
+        }
+
+            li {
+                background-color: #EA584B;
+                padding: 1rem;
+                margin: 1rem; 
+                display: flex;
+                flex-grow: 2;
+            }
+
+            .nav-central-element {
+                display: flex;
+                flex-grow: 8;
+            }
+
+
+    section.title {
+        background-color: #F0763A;
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+        h1.title {
+            background-color: #FFCC5E;
+            margin: 1rem;
+            padding: 1rem;
+        }
+
+
+
+.main-content {
+    background-color: black;  
+    padding: 1rem;
+    margin: 1rem;  
+    display: flex;
+    flex-flow: row;
+}
+
+    main {
+        background-color: #44465E;
+        padding: 1rem;
+        margin: 1rem;
+        width: 70%; 
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+        main > article {
+            background-color: #1664A4;
+            padding: 1rem;
+            margin: 1rem;
+            width: 40%;   /*////////// MODIFY TO AVOID COLUMN DISPLAY IN DESKTOP VP //////////*/
+            display: flex;
+            flex-grow: 2;
+        }
+
+        main > footer {
+            background-color: #6399BB;
+            padding: 1rem;
+            margin: 1rem; 
+            width: 100%;
+        }
+
+    
+    aside {
+        background-color: #F94C47;
+        padding: 1rem;
+        margin: 1rem;
+        width: 30%; 
+    }
+
+        aside > article {
+            background-color: #FFE380;
+            padding: 1rem;
+            margin: 1rem; 
+        }
+
+
+.page-footer {
+    background-color: black;
+    padding: 1rem;
+    margin: 1rem;  
+}
+
+    address {
+        background-color: #E4A434;
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+
+/*
+_____________________________________________________________________________________________
+_____________________________________________________________________________________________
+
+MEDIA QUERY
+
+/////////// TABLETS ///////////////
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+    .main-content {
+        background-color: #FFF735;
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        width: auto;
+    }
+    
+    aside {
+        width: auto;
+    }
+}
+  
+
+/* 
+##Device = Tablets, Ipads (landscape)
+##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+    .main-content {
+        background-color: #FFF735;
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        width: auto;
+    }
+
+    aside {
+        width: auto;
+    }
+}
+
+/*/////////// MOBILE ///////////////////
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+  
+    ul {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+    }
+
+    .main-content {
+        background-color: #FFD938; /* WHY DE COLOR OUTPUT IS #FFD837?? /////////////////*/
+        display: flex;
+        flex-flow: column; 
+    }
+
+        main {
+            width: auto;
+            background-color: #004863;
+        }
+        
+            main > article {
+                background-color: #568991;
+            }
+
+            main > footer {
+                background-color: #97D4C5;
+            }
+
+        aside {
+            width: auto;
+            background-color: #FF794C;
+        }
+
+            aside > article {
+                background-color:#FFAB65;
+            }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+    ///////////////// THE MINIMUM WIDTH LOOKS TOO WIDE FOR A MOBILE VIEWPORT//////////////////
+  */
+@media (min-width: 320px) and (max-width: 480px) {
+    
+    ul {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+    }
+
+    .main-content {
+        background-color: #FFD938;  /* WHY DE COLOR OUTPUT IS #FFD837?? /////////////////*/
+        display: flex;
+        flex-flow: column; 
+    }
+
+        main {
+            width: auto;
+            background-color: #004863;
+        }
+        
+            main > article {
+                background-color: #568991;
+            }
+
+            main > footer {
+                background-color: #97D4C5;
+            }
+
+        aside {
+            width: auto;
+            background-color: #FF794C;
+        }
+
+            aside > article {
+                background-color:#FFAB65;
+            }
