@@ -73,12 +73,18 @@ main {
     justify-content: center;
 }
 
-main>article {
-    background-color: #1664A4;
-    padding: 1rem;
+main>section {
+    width: 100%;
     margin: 1rem;
-    width: 40%;
-    /*////////// MODIFY TO AVOID COLUMN DISPLAY IN DESKTOP VP //////////*/
+    display: flex;
+    flex-flow: row;
+    gap: 2rem;
+}
+
+main article {
+    background-color: #1664A4;
+    padding: 1rem; 
+    margin: 0;
     display: flex;
     flex-grow: 2;
 }
@@ -140,6 +146,10 @@ MEDIA QUERY
         width: auto;
     }
 
+    main section{
+        flex-flow: column;
+    }
+
     aside {
         width: auto;
     }
@@ -160,6 +170,10 @@ MEDIA QUERY
 
     main {
         width: auto;
+    }
+
+    main section{
+        flex-flow: column;
     }
 
     aside {
@@ -191,7 +205,11 @@ MEDIA QUERY
         background-color: #004863;
     }
 
-    main>article {
+    main section{
+        flex-flow: column;
+    }
+
+    main article {
         background-color: #568991;
     }
 
@@ -234,7 +252,11 @@ MEDIA QUERY
         background-color: #004863;
     }
 
-    main>article {
+    main section{
+        flex-flow: column;
+    }
+
+    main article {
         background-color: #568991;
     }
 
